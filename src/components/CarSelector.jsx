@@ -8,7 +8,7 @@ const CarSelector = ({ selectedCar, setSelectedCar, setFormData }) => {
         setFormData((prev) => ({...prev, carType: ""}));
     }
     return (
-        <div className="flex flex-col outline outline-red-400 outline-2 p-2 rounded-md">
+        <div className="flex flex-col outline outline-red-400 hover:cursor-point sm:outline-green-400 lg:outline-blue-400 outline-2 p-2 rounded-md">
             <label htmlFor="carSelectInput">Choose a make and model from the list to populate automatically</label>
             <div className="flex items-center gap-2">
                 <select

@@ -1,24 +1,28 @@
-import EVChooserLanding from './EVChooserLanding';
+
+import Navbar from './Navbar';
+import Hero from './Hero';
+import Footer from './Footer';
+import MobileNavBar from './MobileNavBar';
+import HomeContent from './HomeContent';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
+    const navigate = useNavigate();
+    
     return(
         <>
-        <div className="min-h-screen flex flex-col bg-gray-50">
+        <div className="min-h-screen flex flex-col bg-standardBlue1"> 
 
-        <header className="bg-green-700 text-white p-4">
-        <h1 className="text-2xl font-bold">Electric Car Comparison</h1>
-        </header>
+        <Navbar/>
+        <MobileNavBar/>
+        <Hero/>
+        <HomeContent/>
 
-        <main className="flex-grow flex items-center justify-center">
-        <div className="w-96 h-96 bg-green-300 shadow-lg rounded-full text-center hover:cursor-pointer hover:ring-4 ring-green-500 flex items-center justify-center transition-all">
-            <EVChooserLanding />
-        </div>
-        </main>
+       
 
-        <footer className="bg-green-700 text-white text-center p-4">
-        <p>© 2025 EV Chooser. All rights reserved.</p>
-        </footer>
+       <Footer></Footer>
+        
         </div>
         
         </>
