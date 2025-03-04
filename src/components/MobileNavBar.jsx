@@ -9,7 +9,7 @@ const MobileNavBar = () => {
    
 
     return (
-        <div className="text-white md:hidden bg-standardBlue1 w-full fixed z-30 pr-6 pl-6">
+        <div className="text-white md:hidden bg-standardBlue1 w-full fixed z-30 pr-6 pl-6 py-2">
             <div className="flex align-middle items-center justify-between pt-2 pb-2">
                 <ImageLogo />
                 <TextLogo appName="ElectrifyMyCar" />

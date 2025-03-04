@@ -3,28 +3,19 @@ import { title, electricCarInfo } from '../copyContent/mainPageCopy';
 const HomeContent = () => {
     return (
         <>
-            <div className="flex items-center align-middle flex-grow flex-col justify-center mt-[400px] md:mt-[464px] bg-standardBlue1 text-white z-20">
-                <div className="text-2xl font-semibold p-4">{title.title}</div>
-                <div className="p-4 flex flex-col gap-8 md:gap-20 w-10/12 align-middle ">
-                    <div>
-                    <h1 className="font-semibold py-2">{electricCarInfo.title}</h1>
-                    <p>{electricCarInfo.description}</p>
-                    </div>
-                    
+            <div className="flex items-center align-middle flex-grow flex-col justify-center mt-[250px] sm:mt-[300px] md:mt-[400px]  text-white z-20">
+        
+                <div className="flex flex-col gap-36 md:gap-40 w-full align-middle bg-transparent justify-around items-center">
 
-          
                     {electricCarInfo.benefits.map((benefit, idx) => (
-                        <div key={idx}>
-                            <h2 className="font-semibold py-2">{benefit.title}</h2>
-                            <p>{benefit.content}</p>
+                        <div key={idx} className="bg-standardBlue1 w-full min-h-64 flex flex-col text-center justify-center bg-opacity-95 my-8">
+                            <h2 className="font-semibold py-2 text-2xl sm:text-4xl sm:w-4/5 self-center mt-8">{benefit.title}</h2>
+                            <p className=" p-4 sm:w-4/5 self-center mt-4 mb-8">{benefit.content}</p>
                         </div>
                     ))}
 
                  
-                    <div>
-                        <strong>Conclusion:</strong>
-                        <p>{electricCarInfo.conclusion}</p>
-                    </div>
+                   
                 </div>
             </div>
         </>

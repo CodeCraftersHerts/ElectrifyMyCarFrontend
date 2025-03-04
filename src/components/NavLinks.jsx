@@ -36,7 +36,7 @@ const NavLinks = () => {
                 <ul className="flex justify-between gap-8">
                     {navLinks.map((link, index) => (
                         <li key={index} onClick={() => handleLinkClick(link.url)}>
-                            <span className="text-white text-xs sm:text-lg hover:underline cursor-pointer">
+                            <span className="text-white text-xs sm:text-base hover:underline cursor-pointer">
                                     {link.text}
                                 </span>
                         </li>

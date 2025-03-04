@@ -9,6 +9,7 @@ import ChargingPointLocator from './components/ChargingPointLocator';
 import VehicleCatalogue from './components/VehicleCatalogue';
 import ChargingGuide from './components/ChargingGuide';
 import CostCalculations from './components/CostCalculations';
+
 function App() {
   return (
 

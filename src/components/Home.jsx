@@ -1,32 +1,33 @@
-
+import heroImage from "../assets/images/hero1.jpg";
 import Navbar from './Navbar';
 import Hero from './Hero';
 import Footer from './Footer';
 import MobileNavBar from './MobileNavBar';
 import HomeContent from './HomeContent';
-import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  return (
+    <>
 
-    const navigate = useNavigate();
-    
-    return(
-        <>
-        <div className="min-h-screen flex flex-col bg-standardBlue1"> 
+      <div className="fixed inset-0 w-full h-screen">
+  <img
+    src={heroImage}
+    alt="Background"
+    className="w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+</div>
 
-        <Navbar/>
-        <MobileNavBar/>
-        <Hero/>
-        <HomeContent/>
 
-       
-
-       <Footer></Footer>
-        
-        </div>
-        
-        </>
-    );
-}
+      <div className="min-h-screen relative flex flex-col ">
+        <Navbar />
+        <MobileNavBar />
+        <Hero />
+        <HomeContent />
+        <Footer />
+      </div>
+    </>
+  );
+};
 
 export default Home;
