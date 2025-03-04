@@ -8,14 +8,14 @@ import HomeContent from './HomeContent';
 const Home = () => {
   return (
     <>
-
+      {/* Background image container */}
       <div className="fixed inset-0 w-full h-screen">
   <img
     src={heroImage}
     alt="Background"
     className="w-full h-full object-cover"
   />
-  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <div className="absolute inset-0 bg-black opacity-50 h-full"></div>
 </div>
 
 
