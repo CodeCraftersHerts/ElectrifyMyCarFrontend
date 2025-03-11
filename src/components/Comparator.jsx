@@ -2,6 +2,8 @@ import FuelComparisonForm from './FuelComparisonForm'
 import Navbar from './Navbar';
 import MobileNavBar from './MobileNavBar';
 import Footer from './Footer';
+import MultiStepForm from './MultiStepForm';
+import FuelComparisonMultiStepForm from './FuelComparisonMultiStepForm';
 
 const Comparator = () => {
 
@@ -12,8 +14,12 @@ const Comparator = () => {
 
         <Navbar/>
         <MobileNavBar/>
-        <div className="min-h-96 mt-28 mb-10">
-        <FuelComparisonForm className="top-16" />
+        <div className="min-h-96 mt-40 mb-10">
+        {/* <FuelComparisonForm className="top-16" /> */}
+
+        {/* <MultiStepForm></MultiStepForm> */}
+
+        <FuelComparisonMultiStepForm></FuelComparisonMultiStepForm>
 
         </div>
         

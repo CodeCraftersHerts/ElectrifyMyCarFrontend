@@ -28,7 +28,6 @@ const CarSelector = ({ selectedCar, setSelectedCar, setFormData }) => {
                     <option value="ford-focus">Ford Focus</option>
                 </select>
 
-                {/* Clear Button */}
                 {selectedCar && (
                     <button
                         type="button"
