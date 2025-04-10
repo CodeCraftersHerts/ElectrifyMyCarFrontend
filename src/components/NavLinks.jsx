@@ -1,81 +1,35 @@
-import { useState, useEffect } from "react";
+import { navLinks } from "./Links";
+import { useNavigate } from "react-router-dom";
 
-import { navLinks } from './Links';
+const NavLinks = ({ activeLink }) => {
+  const navigate = useNavigate();
 
-import { useNavigate } from 'react-router-dom';
+  const linkClass = (isActive) =>
+    `w-full flex items-center justify-center gap-4 text-center text-black text-xs sm:text-sm cursor-pointer rounded-lg py-1 px-2 transition-colors ${
+      isActive
+        ? 
+          "ring-2 ring-slate-200 ring-offset-2 ring-offset-slate-700 bg-slate-300 focus:outline-none"
+        : "bg-slate-300 hover:underline hover:bg-slate-100 focus:outline-none"
+    }`;
 
-
-
-const NavLinks = () => {
-
-
-    const [isLargeScreen, setIsLargeScreen] = useState(true);
-    const navigate = useNavigate(); 
-
-  
-    const handleLinkClick = (url) => {
-        navigate(url);
-
-    };
-
-
-    useEffect(() => {
-        const checkScreenSize = () => {
-            setIsLargeScreen(window.innerWidth >= 1024); 
-        };
-
-        checkScreenSize(); 
-        window.addEventListener("resize", checkScreenSize); 
-
-        return () => window.removeEventListener("resize", checkScreenSize);
-    }, []);
-
-    if (isLargeScreen) {
-        return (
-            <nav>
-                <ul className="flex justify-between gap-8">
-                    {navLinks.map((link, index) => (
-                        <li key={index} onClick={() => handleLinkClick(link.url)}>
-                            <span className="text-white text-xs sm:text-base hover:underline cursor-pointer">
-                                    {link.text}
-                                </span>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-        );
-    }
-
-    const midPoint = Math.ceil(navLinks.length / 2);
-    const topRow = navLinks.slice(0, midPoint);
-    const bottomRow = navLinks.slice(midPoint);
-
-    return (
-        <nav>
-          
-            <ul className="flex justify-between gap-8">
-                {topRow.map((link, index) => (
-                    <li key={index}>
-                        <a href={link.url} className="text-white hover:underline">
-                            {link.text}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-
-            {bottomRow.length > 0 && (
-                <ul className="flex justify-center gap-8 mt-4">
-                    {bottomRow.map((link, index) => (
-                        <li key={index}>
-                            <a href={link.url} className="text-white hover:underline">
-                                {link.text}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </nav>
-    );
+  return (
+    <nav>
+      <ul className="grid grid-cols-3 2xl:grid-cols-6 gap-2 2xl:gap-8">
+        {navLinks.map((link, index) => {
+          const isActive = activeLink === link.url;
+          return (
+            <li key={index} onClick={() => navigate(link.url)}>
+              <span className={linkClass(isActive)}>
+                {link.icon && <link.icon className="inline-block" />}
+                {link.text}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
 };
 
 export default NavLinks;
+

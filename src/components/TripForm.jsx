@@ -57,7 +57,7 @@ const TripForm = ({ formData, setFormData, addTrip, trips, removeTrip }) => {
                 </select>
             </div>
 
-            {/* Distance Input */}
+            {}
             <div className="flex flex-col">
                 <label htmlFor="distance">What is the total distance of your trip?</label>
                 <input
@@ -71,7 +71,7 @@ const TripForm = ({ formData, setFormData, addTrip, trips, removeTrip }) => {
                 />
             </div>
 
-            {/* Add Trip Button */}
+            {}
             <button
                 type="button"
                 onClick={addTrip}
@@ -80,7 +80,7 @@ const TripForm = ({ formData, setFormData, addTrip, trips, removeTrip }) => {
                 Add Trip
             </button>
 
-            {/* Displaying Trip List */}
+            {}
             <div className="space-y-2">
                 {trips.map((trip, index) => (
                     <Trip key={index} trip={trip} index={index} removeTrip={removeTrip} />

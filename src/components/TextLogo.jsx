@@ -9,7 +9,7 @@ const TextLogo = ({appName}) => {
     };
     
     return(<>
-    <div className="text-2xl hover:cursor-pointer hover:text-[#ffea9e]" onClick={() => handleLinkClick("/")}>{appName}
+    <div className="text-2xl " onClick={() => handleLinkClick("/")}>{appName}
        
         </div></>);
 

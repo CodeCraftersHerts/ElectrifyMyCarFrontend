@@ -8,6 +8,8 @@ export default {
     extend: {
       colors: {
         standardBlue1: '#2B295D',
+        standardBlueLight: '#4C4AA5',        // Lighter version for navbar background
+        standardTertiary: '#FF6F61', 
       }
     },
   },

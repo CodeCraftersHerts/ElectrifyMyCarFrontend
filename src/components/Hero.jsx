@@ -1,20 +1,15 @@
 import { useState, useEffect } from "react";
-import heroImage from "../assets/images/hero1.jpg";
+import { LuCar, LuDollarSign, LuGlobe, LuZap } from "react-icons/lu";
 
 const Hero = () => {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
-
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-      //increase to make fade out longer
-      const maxScroll = 100; 
-     
+      const maxScroll = 100;
       let newOpacity = 1 - scrollY / maxScroll;
-      newOpacity = Math.max(0, Math.min(1, newOpacity)); 
-
+      newOpacity = Math.max(0, Math.min(1, newOpacity));
       setOpacity(newOpacity);
     };
 
@@ -23,16 +18,32 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="fixed top-12 md:top-16 left-0 w-screen h-[400px] z-10">
-      
-      <div className="absolute inset-0  flex items-center justify-center">
-        <div
-          className="text-white text-4xl sm:text-6xl xl:text-8xl font-bold transition-opacity duration-100 flex flex-col align-top self-start mt-12 md:mt-28 p-8 lg:mt-36 xl:mt-44 text-center shadow-lg"
-          style={{ opacity }}
-        >
-          <p>Make the switch today...</p>
-      
-        
+    <div className="relative w-full h-[400px] bg-cover bg-center z-10">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-white mt-40 text-center gap-12">
+        <p className="text-4xl md:text-6xl font-bold">
+          Join the Electric Revolution
+        </p>
+        <p className="text-4xl md:text-6xl font-bold">
+          Make the Switch Today
+        </p>
+        {}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="flex flex-col items-center">
+            <LuCar size={40} />
+            <span className="mt-2">Drive Smarter</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <LuDollarSign size={40} />
+            <span className="mt-2">Reduce Costs</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <LuGlobe size={40} />
+            <span className="mt-2">Protect the Planet</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <LuZap size={40} />
+            <span className="mt-2">Innovate Further</span>
+          </div>
         </div>
       </div>
     </div>
